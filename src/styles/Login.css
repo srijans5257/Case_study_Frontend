@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #16244B;
+  }
+
+.to_login{
+    text-align: center;
+}
+.to_signup{
+    text-align: center;
+}
