@@ -171,7 +171,7 @@ function Home() {
   };
   return (
     <Box bg="linear-gradient(to bottom right, #1d253c, #12182a)" h="100vh">
-      <Box className="NavBar" display="flex" justifyContent="space-between" alignItems="center" position="sticky" top="0" zIndex="2000" bg="gray.800">
+      <Box className="NavBar" display="flex" justifyContent="space-between" alignItems="center" position="sticky" top="0" zIndex="1000" bg="gray.800">
       <SidebarHome isOpen={isSidebarOpen} onDashboardClick={onDashboardClick}
         onApplicationsClick={onApplicationsClick}
         onApplicationCreationClick={onApplicationsCreationClick}/>

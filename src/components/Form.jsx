@@ -88,7 +88,7 @@ function Form({ route, method }) {
                 navigate("/admindashboard");
             }
         } catch (error) {
-            alert("Username already exists");
+            alert("Invalid Username");
         } finally {
             setLoading(false);
         }
