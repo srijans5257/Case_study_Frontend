@@ -105,6 +105,10 @@ function Home() {
         status: 'Unread',  
         message: `Application Created by ${username}! Pending for approval.`, 
       });
+      setReason("");
+      setDescription("")
+      setFrom_date("")
+      setTo_date("")
       setError(null);
       getNotes();
     } catch (error) {
