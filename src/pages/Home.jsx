@@ -4,7 +4,7 @@ import Note from "../components/Note";
 import "../styles/Home.css";
 import SidebarHome from "../components/SidebarHome"
 import { useNavigate } from "react-router-dom";
-import {Input,Popover,PopoverTrigger,PopoverContent,PopoverArrow,PopoverCloseButton,PopoverHeader,PopoverBody,VStack,Flex,Box, Heading, Menu, MenuButton, MenuList, MenuItem, Avatar, IconButton, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, useDisclosure, Text, Image, HStack,Button } from "@chakra-ui/react";
+import {Input,Popover,PopoverTrigger,PopoverContent,PopoverArrow,PopoverCloseButton,PopoverHeader,PopoverBody,VStack,Flex,Box, Heading, Menu, MenuButton, MenuList, MenuItem, Avatar, IconButton, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, useDisclosure, Text, Image, HStack,Button, Spinner } from "@chakra-ui/react";
 import { BellIcon,HamburgerIcon } from "@chakra-ui/icons";
 import { Navigate } from "react-router-dom";
 function Home() {
@@ -29,6 +29,8 @@ function Home() {
   useEffect(() => {
     getNotes();
     getNotifications();
+    const notificationInterval=setInterval(getNotifications,10000);
+    return ()=>clearInterval(notificationInterval)
   }, []);
    const fetchUser=async()=>{
      if (username) {
@@ -293,7 +295,7 @@ function Home() {
               </Button>
             </Box>
           ) : (
-            <Text color="black">Loading profile data...</Text>
+            <Text color="black">Loading profile data... <Spinner></Spinner></Text>
           )}
         </ModalBody>
       </ModalContent>
